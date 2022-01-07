@@ -1,4 +1,26 @@
 <link rel="stylesheet" href="/css/user_profile.css">
 
     <h1> Codeial / Home page</h1>
-   
+
+    <section id="feed-posts">
+        <h4>Posts</h4>
+        <form action="/posts/create" id="new-post-form" method="post">
+            <textarea name="content" cols="30" rows="3" placeholder="type here..."></textarea>
+            <input type="submit" value="POST">
+        </form>
+        <div id="posts-list-container">
+
+            <ul>
+                <% for(post of posts){ %>
+                    <li>
+                        <%= post.content%>
+                        <br>
+                        <small>
+                            <%= post.user.name %>
+                        </small>
+                    </li>
+                <% } %>
+            </ul>
+
+        </div>
+    </section> 

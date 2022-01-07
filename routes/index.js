@@ -4,5 +4,6 @@ const homeController = require('../controllers/home_controller');
 
 router.get('/',homeController.home);
 router.use('/profile',require('./profile'));
+router.use('/posts',require('./post'));
 
 module.exports = router;
