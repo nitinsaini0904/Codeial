@@ -12,10 +12,18 @@ module.exports.home = function(req,res){
   //   return;
   // }); 
 
-  Post.find({}).populate('user').exec(function(err,post){
+  Post.find({})
+  .populate('user')
+  .populate({
+    path: 'comments',
+    populate: {
+      path: 'user'
+    }
+  })
+  .exec(function(err,posts){
     res.render('home',{
       title : 'Codeial | Home',
-      posts : post
+      posts : posts
     });
     return;
   });
