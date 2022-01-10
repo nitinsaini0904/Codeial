@@ -2,17 +2,29 @@ const User = require('../models/users');
 
 // rendering profile
 module.exports.profile = function(req,res){
-  console.log("Reached profile command");
-  return res.render('profile',{
-    title: 'Profile'
+  User.findById(req.params.id, function(err,user){
+    return res.render('profile',{
+      title: 'User Profile',
+      profile_user : user
+    });
   });
+}
+
+module.exports.update = function(req,res){
+  if(req.user.id == req.params.id){
+    User.findByIdAndUpdate(req.params.id,req.body,function(err,user){
+      return res.redirect('back');
+    });
+  }else{
+    return res.status(401).send('Unauthorised');
+  }
 }
 
 // rendring Sign In
 module.exports.signIn = function(req,res){
 
   if(req.isAuthenticated()){
-    return res.redirect('/profile');
+    return res.redirect('/users/profile');
   }
 
   return res.render('user_sign_in',{
@@ -24,7 +36,7 @@ module.exports.signIn = function(req,res){
 module.exports.signUp = function(req,res){
   
   if(req.isAuthenticated()){
-    return res.redirect('/profile');
+    return res.redirect('/users/profile');
   }
   return res.render('user_sign_up',{
     title: 'Codeial | Sign Up'
@@ -45,7 +57,7 @@ module.exports.create = function(req,res){
       User.create(req.body,function(err,user){
         if(err){ console.log('Error in singing up the user'); return; }
 
-        return res.redirect('/profile/sign-in');
+        return res.redirect('/users/sign-in');
       });
     }else{
       return res.redirect('back');
@@ -55,8 +67,8 @@ module.exports.create = function(req,res){
 
 // creating session 
 module.exports.createSession = function(req,res){
-  // TODO later
-  return res.redirect('/profile');
+  
+  return res.redirect('/');
 }
 
 // creating sign-out
