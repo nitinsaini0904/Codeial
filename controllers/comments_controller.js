@@ -1,44 +1,50 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
 
-module.exports.create = function(req,res){
-  Post.findById(req.body.post, function(err,post){
-    if(post){
-      Comment.create({
-        content : req.body.content,
-        post : req.body.post,
-        user : req.user._id
-      }, function(err,comment){
-        if(err){
-          console.log('Error in adding comment to database');
-          return;
-        }
+module.exports.create = async function(req,res){
+  
+  try {
+      let post = await Post.findById(req.body.post);
 
-        post.comments.push(comment);
+      if(post){
+        let comment = await Comment.create({
+          content : req.body.content,
+          post : req.body.post,
+          user : req.user._id
+        });
+        
+        post.comments.push(comment); 
         post.save();
 
-        res.redirect('/');
-      });
-    }
-  });
+        req.flash('success','Comment posted!');
+        return res.redirect('/');
+      }
+  } catch (err) {
+        req.flash('error',err);
+        return res.redirect('/');
+      }
 }
 
-module.exports.destroy = function(req,res){
+module.exports.destroy = async function(req,res){
 
-  Comment.findById(req.params.commentId,function(err,comment){
+  try {
+      let comment = await Comment.findById(req.params.commentId);
 
-    Post.findById(req.params.postId,function(err,post){
+      let post = await Post.findById(req.params.postId);
+
       if(comment.user == req.user.id || post.user == req.user.id){
-      
+        
         comment.remove();
-  
-        Post.findByIdAndUpdate(req.params.postId, { $pull: { comments : req.params.commentId}}, function(err,post){
-          return res.redirect('back');
-        });
+
+        let postI = Post.findByIdAndUpdate(req.params.postId, { $pull: { comments : req.params.commentId}});
+        req.flash('success','Comment deleted!');
+        return res.redirect('back');
       }else{
+        req.flash('error','You cannot delete the comment');
         return res.redirect('back');
       }
-    });
-
-  });
+  } catch (err) {
+    req.flash('error',err);
+    return res.redirect('back');
+  }
 }
