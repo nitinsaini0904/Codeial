@@ -33,6 +33,8 @@ app.use(expressLayouts);
 
 // including static files
 app.use(express.static('./assets'));
+// make the uploads path available to the browser
+app.use('/uploads',express.static(__dirname + '/uploads'));
 
 // extract styles and scripts from subpages
 app.set('layout extractStyles',true);
