@@ -11,10 +11,15 @@ router.get('/sign-up',profileController.signUp);
 
 router.post('/create',profileController.create);
 
+// use passport as a middleware to authenticate
 router.post('/create-session', passport.authenticate(
   'local',
   {failureRedirect : '/users/profile/sign-in'},
 ) ,profileController.createSession);
 
 router.get('/sign-out',profileController.destroySession);
+
+router.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
+router.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/users/profile/sign-in'}), profileController.createSession );
+
 module.exports = router;   
