@@ -33,8 +33,7 @@ class PostComments{
                 url: '/comments/create',
                 data: $(self).serialize(),
                 success: function(data){
-                    console.log(data.data.newCommNadUserDetails   );
-                     let newComment = pSelf.newCommentDom(data.data.newCommNadUserDetails.comment,data.data.newCommNadUserDetails.userDet);
+                    let newComment = pSelf.newCommentDom(data.data.comment);
                     $(`#post-comments-${postId}`).prepend(newComment);
                     pSelf.deleteComment($(' .delete-comment-button', newComment));
   
@@ -69,7 +68,7 @@ class PostComments{
                             ${comment.content}
                             <br>
                             <small>
-                                ${user.user.name}
+                                ${comment.user.name}
                             </small>
                         </p>    
   
