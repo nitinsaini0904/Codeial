@@ -12,7 +12,7 @@ const likeSchema = new mongoose.Schema({
     refPath: 'onModel'
   },
   // this field is used for definig the type of the liked object, since this is a dynamic refernce
-  onModle: {
+  onModel: {
     type: String,
     required: true,
     enum: ['Post', 'Comment']
