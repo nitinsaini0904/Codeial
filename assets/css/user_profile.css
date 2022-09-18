@@ -1,5 +1,7 @@
 body {
-  background-color: #ffffff;
+  background-color: #ffffff; }
+
+#profile-container {
   height: 608px; }
 
 body input {
@@ -7,10 +9,21 @@ body input {
   margin: 20px;
   font-size: 0.9rem; }
 
+#profile-details-container {
+  margin-top: 6%;
+  margin-left: 30%; }
+
+#profile-image {
+  margin-left: 10%;
+  box-shadow: 4px 2px 12px 2px;
+  transition: transform .2s; }
+
+#profile-image:hover {
+  transform: scale(1.2); }
+
 .otherUser {
   position: relative;
-  top: 3%;
-  left: 2%; }
+  margin-left: 2%; }
 
 #showChanges {
   background-color: #2196f3;
@@ -23,6 +36,7 @@ label {
 
 .userInfo {
   border: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   border-bottom: 2px solid black;
   outline: none;
   display: block;
