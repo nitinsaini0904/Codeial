@@ -8,7 +8,7 @@
         <% if (locals.user) { %>
         <form action="/posts/create" id="new-post-form" method="post">
             <textarea name="content" cols="30" rows="3" placeholder="type here..."></textarea>
-            <input type="submit" value="POST">
+            <input id="addPosts" type="submit" value="POST">
         </form>
         <% } %>
         <div id="posts-list-container">
@@ -24,17 +24,19 @@
         </div>
     </section> 
     <aside class="right-side">
-        <section id="user-friends">
+        <!-- <section id="user-friends">
             <h4>Friends</h4>
             
-        </section>
+        </section> -->
 
-        <section id="users-available">
+        <section id="users-friends">
             <h4>Users</h4>
             <% for( u of all_users) { %>
-                <p>
-                    <a href="/users/profile/<%=u.id%>"><%= u.name %></a>
-                </p>
+                <a id="friendsList" href="/users/profile/<%=u.id%>">
+                    <p id="friends">
+                        <img style="width:10%; height: 10%;"   class="userProfile" src="https://cdn-icons-png.flaticon.com/512/3033/3033143.png" alt="">&ensp;<%= u.name %>
+                    </p>
+                </a>
             <% } %>
         </section>
 
@@ -55,6 +57,6 @@
 <script src="/js/chat_engine.js"></script>
 <% if(locals.user) { %>
     <script>
-        new chatEngine('user-chat-box', '<%= locals.user.email%>')
+        new ChatEngine('user-chat-box', '<%= locals.user.email%>')
     </script>
 <% } %>

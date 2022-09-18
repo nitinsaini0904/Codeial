@@ -1,0 +1,40 @@
+#loginForm {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  position: relative;
+  top: 5%;
+  left: 37%;
+  width: 20rem;
+  height: auto;
+  border: 2px solid black;
+  border-radius: 5%; }
+
+.inputLogin {
+  width: 90%;
+  height: 5%;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid black;
+  margin-left: 15px;
+  margin-top: 20px; }
+
+#signinPara {
+  text-align: center; }
+
+#gmail {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin-top: 3%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; }
+
+#submit2 {
+  width: 25%;
+  height: 7%;
+  margin-top: 15px;
+  padding: 5px;
+  margin-left: 40%;
+  border: 2px solid black;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background: #2196f3;
+  cursor: pointer;
+  border-radius: 10px; }

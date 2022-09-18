@@ -18,8 +18,24 @@
 
     <%- include('_footer'); -%>
     <%- script %>
+    
+    <div class="loader-container">
+      <img src="/images/loader100.gif">
+    </div>
 
     <script>
+
+      function loader(){
+        document.querySelector('.loader-container').classList.add('fade-out');
+      }
+
+      function fadeOut(){
+        setInterval(loader,1500);
+      }
+
+      window.onload =fadeOut();
+
+
         <% if( flash.success && flash.success.length > 0) { %>
           new Noty({
               theme: 'relax',

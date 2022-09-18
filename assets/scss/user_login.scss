@@ -1,0 +1,47 @@
+h1 {
+  text-align: center;
+  font-family: "Source Sans Pro", "Arial", sans-serif;
+}
+#sign-up {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  position: relative;
+  top: 5%;
+  left: 37%;
+  width: 20rem;
+  height: 17rem;
+  border: 2px solid black;
+  border-radius: 5%;
+}
+.inputsignIn {
+  margin-left: 15px;
+  margin-top: 10px;
+  display: block;
+  border: none;
+  width: 90%;
+  height: 15%;
+  background-color: transparent;
+  border-bottom: 2px solid black;
+}
+
+#submit {
+  margin-top: 10%;
+  margin-left: 35%;
+  width: 30%;
+  height: 12%;
+  padding: 5px;
+  border: 2px solid black;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background: #2196f3;
+  cursor: pointer;
+  border-radius: 10px;
+}
+#gmail {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin-top: 3%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+#signinPara {
+  text-align: center;
+}

@@ -69,7 +69,7 @@ module.exports.signIn = function(req,res){
   });
 }
 
-// rendring Sing Up 
+// rendring Sign Up 
 module.exports.signUp = function(req,res){
   
   if(req.isAuthenticated()){

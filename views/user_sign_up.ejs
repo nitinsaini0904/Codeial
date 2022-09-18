@@ -1,10 +1,21 @@
-<h1>Sign Up</h1>
+<link rel="stylesheet" href="/css/user_signup.css">
+<h1 style="text-align: center;" id="signinHeading">Sign Up</h1>
 
-<form action="/users/create" method="POST">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <input type="password" name="password" placeholder="Your Password" required>
-  <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-  <input type="submit" value="Sign Up">
+<form id="loginForm" action="/users/create" method="POST">
+  <input class="inputLogin" type="text" name="name" placeholder="Your Name" required>
+  <input class="inputLogin" type="email" name="email" placeholder="Your Email" required>
+  <input class="inputLogin" type="password" name="password" placeholder="Your Password" required>
+  <input class="inputLogin" type="password" name="confirm_password" placeholder="Confirm Password" required>
+  <input id="submit2" type="submit" value="Sign Up">
+  <p id="signInPara">
+    Sign Up Using<br />
+  
+    <a href="/users/auth/google"
+      ><img
+        id="gmail"
+        src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png"
+        alt=""
+    /></a>
+  </p>
  
 </form>

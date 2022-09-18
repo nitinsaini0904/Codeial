@@ -1,9 +1,11 @@
+<link rel="stylesheet" href="/css/comments.css">
+
 <li id="comment-<%= comment._id %>">
     <p>
         <% if (locals.user && locals.user.id == comment.user.id){ %>
         
         <small>
-            <a class="delete-comment-button" href="/comments/destroy/<%= comment._id %>/<%=post._id%>">X</a>
+            <a class="delete-button" href="/comment/destroy/<%= comment._id %>/<%=post._id%>"><img class="delete-button" src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="delete-post"></a>
         </small>
         <% } %>
         <%= comment.content %>

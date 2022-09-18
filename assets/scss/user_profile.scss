@@ -1,3 +1,31 @@
-body{
-  background-color: aquamarine;
+body {
+  background-color: #ffffff;
+}
+
+body input {
+  display: block;
+  margin: 20px;
+  font-size: 0.9rem;
+}
+
+.otherUser {
+  position: relative;
+  top: 3%;
+  left: 2%;
+}
+#showChanges {
+  background-color: #2196f3;
+  padding: 5px;
+  border-radius: 10px;
+}
+label {
+  position: relative;
+  margin-left: 20px;
+}
+.userInfo {
+  border: none;
+  border-bottom: 2px solid black;
+  outline: none;
+  display: block;
+  width: 20%;
 }

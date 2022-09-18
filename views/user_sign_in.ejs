@@ -1,11 +1,13 @@
-<h1>Sign In</h1>
+<link rel="stylesheet" href="/css/user_login.css">
+<h1 style="text-align: center;" id="signinHeading">Sign In</h1>
 
-<form action="/users/create-session" method="post">
-  <input type="email" name="email" placeholder="Email" required>
-  <input type="password" name="password" placeholder="Password" required>
-  <input type="submit" value="Sign In"> 
+<form id="sign-up" action="/users/create-session" method="post">
+  <input class="inputsignIn" type="email" name="email" placeholder="Email" required>
+  <input class="inputsignIn" type="password" name="password" placeholder="Password" required>
+  <input id="submit" type="submit" value="Sign In"> 
+
+  <p id="signInPara">
+    Login In Using<br> 
+
+    <a href="/users/auth/google"><img id="gmail" src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png" alt=""></a>
 </form>
-
-<p>
-  <a href="/users/auth/google">Google Sign In/Sign Up</a>
-</p>
