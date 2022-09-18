@@ -6,8 +6,17 @@
   font-size: larger;
   font-family: "Times New Roman", Times, serif; }
 
-.delete-button {
+.delete-comment-button {
   width: 20px;
   height: 20px;
   position: relative;
   margin-right: 15px; }
+
+.userInfo {
+  position: relative;
+  top: 5px;
+  margin-left: 15px; }
+
+.userProfile {
+  width: 1rem;
+  height: 1rem; }

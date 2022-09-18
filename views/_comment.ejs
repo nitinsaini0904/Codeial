@@ -1,18 +1,23 @@
 <link rel="stylesheet" href="/css/comments.css">
 
 <li id="comment-<%= comment._id %>">
-    <p>
+    <p id="comments-container">
+        <small class="userInfo">
+            <img
+              class="userProfile"
+              src="https://cdn-icons-png.flaticon.com/512/3033/3033143.png"
+              alt=""
+            />
+            <%= comment.user.name %>
+          </small>
+          <br>
         <% if (locals.user && locals.user.id == comment.user.id){ %>
         
         <small>
-            <a class="delete-button" href="/comment/destroy/<%= comment._id %>/<%=post._id%>"><img class="delete-button" src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="delete-post"></a>
+            <a class="delete-comment-button" href="/comment/destroy/<%= comment._id %>/<%=post._id%>"><img class="delete-button" src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="delete-post-comment"></a>
         </small>
         <% } %>
         <%= comment.content %>
-        <br>
-        <small>
-            <%= comment.user.name %>
-        </small>
         <br>
         <small>
             <% if(locals.user){ %>

@@ -43,33 +43,48 @@
               <p>
                   
                   <small>
-                      <a class="delete-post-button" href="/posts/destroy/${ post._id }">Delete</a>
+                      <a class="delete-post-button" href="/posts/destroy/${ post._id }"><img style="width: 20px;
+                      height: 20px;
+                      position: relative;
+                      margin-right: 15px;" class="delete-button" src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="delete-post"></a>
                   </small>
                   ${post.content }
                   <br>
                   <small>
                     ${ post.user.name }
-              </small>
-              </p>
-              <br>
-              <small>
+                  </small>
               
-                    <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${post._id}&type=Post">
-                        0 Likes
-                    </a>
+                <br>
+                <small>
+                
+                      <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${post._id}&type=Post">
+                          0 Likes
+                      </a>
 
-              </small>
-
+                </small>
+              </p>
               <div class="post-comments">
                   
                       <form action="/comments/create" id="post-${post._id}-comments-form" method="post">
                           <input type="text" name="content" placeholder="Add comment"..>
                           <input type="hidden" name="post" value="${ post._id }">
-                          <input type="submit" value="COMMENT">
+                          <input style="background-color: 2196f3;
+                          padding: 3px;
+                          width: auto;
+                          margin-top: 10px;
+                          border-radius: 10px;
+                          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+                            rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;" type="submit" value="COMMENT">
                       </form>
 
 
-                  <div class="post-comments-list">
+                  <div style="outline: none;
+                  border: 1px solid lightgray;
+                  width: 80%;
+                
+                  margin-top: 10px;
+                  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+                    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;" class="post-comments-list">
 
                       <ul id="post-comments-${ post._id }">
                           

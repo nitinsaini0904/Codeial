@@ -1,8 +1,10 @@
 #home-container {
+  height: 608px;
   display: flex; }
 
 body {
-  font-family: "Source Sans Pro", "Arial", sans-serif; }
+  font-family: "Source Sans Pro", "Arial", sans-serif;
+  height: 100%; }
 
 #home-container #feed-posts {
   width: 70%;
@@ -15,7 +17,7 @@ body {
   height: auto; }
 
 #friends {
-  width: 50%;
+  width: 171px;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; }
 

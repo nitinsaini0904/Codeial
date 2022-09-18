@@ -61,18 +61,26 @@ class PostComments{
     newCommentDom(comment,user){
         // I've added a class 'delete-comment-button' to the delete comment link and also id to the comment's li
         return $(`<li id="comment-${ comment._id }">
-                        <p>
-                            
+                        <p id="comments-container">
+                            <small class="userInfo" style="position: relative;
+                            top: 5px;
+                            margin-left: 15px;">
+                                <img class="userProfile" style="width: 1rem;
+                                height: 1rem;" 
+                                src="https://cdn-icons-png.flaticon.com/512/3033/3033143.png"
+                                alt=""/>
+                                ${comment.user.name}
+                            </small>
+                            <br>
                             <small>
-                                <a class="delete-comment-button" href="/comments/destroy/${ comment._id }/${ comment.post}">X</a>
+                                <a class="delete-comment-button" href="/comments/destroy/${ comment._id }/${ comment.post}"><img class="delete-button" style="width: 20px;
+                                height: 20px;
+                                position: relative;
+                                margin-right: 15px;" src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="delete-post-comment"></a>
                             </small>
                             
                             ${comment.content}
-                            <br>
-                            <small>
-                                ${comment.user.name}
-                            </small>
-                        </p>   
+                           
                         <br>
                         <small>
                         
@@ -81,7 +89,7 @@ class PostComments{
                             </a>
 
                         </small> 
-  
+                        </p>
                 </li>`);
     }
   

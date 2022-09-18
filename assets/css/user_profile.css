@@ -1,5 +1,6 @@
 body {
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  height: 608px; }
 
 body input {
   display: block;
